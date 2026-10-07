@@ -1,7 +1,7 @@
 import MetalKit
 
 @MainActor
-final class TriangleRenderer: NSObject, MetalRenderer {
+final class TriangleRenderer: NSObject, @MainActor MetalRenderer {
   let device: any MTLDevice
   private let queue: any MTLCommandQueue
   private let pipeline: any MTLRenderPipelineState

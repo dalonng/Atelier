@@ -1,7 +1,7 @@
 import MetalKit
 
 @MainActor
-final class SquareRenderer: NSObject, MetalRenderer {
+final class SquareRenderer: NSObject, @MainActor MetalRenderer {
   let device: any MTLDevice
   private let queue: any MTLCommandQueue
   private let pipeline: any MTLRenderPipelineState
