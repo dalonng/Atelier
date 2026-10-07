@@ -67,3 +67,6 @@ fastlane/test_output
 Derived/
 .tuist-cache/
 .DS_Store
+
+# Developer-local configuration
+.env
