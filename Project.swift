@@ -5,7 +5,7 @@ let project = Project(
   name: AppSettings.projectName,
   options: .options(
     automaticSchemesOptions: .disabled,
-    disableSynthesizedResourceAccessors: true
+    disableSynthesizedResourceAccessors: true,
   ),
   settings: ProjectBuildSettings.settings,
   targets: [AppTarget.make()],
@@ -16,7 +16,9 @@ let project = Project(
     "Tuist/ProjectDescriptionHelpers/**",
     "mise.toml",
     "justfile",
+    "Scripts/**",
+    ".swiftformat",
     "README.md",
   ],
-  resourceSynthesizers: []
+  resourceSynthesizers: [],
 )

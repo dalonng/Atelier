@@ -4,7 +4,7 @@ public enum AppBuildSettings {
   public static let settings: Settings = .settings(
     base: baseSettings.merging(AppInfoPlist.buildSettings) { _, value in value },
     configurations: [.debug(name: "Debug"), .release(name: "Release")],
-    defaultSettings: .none
+    defaultSettings: .none,
   )
 
   private static let baseSettings: SettingsDictionary = [
@@ -24,6 +24,5 @@ public enum AppBuildSettings {
     "SWIFT_VERSION": "5.0",
     "MARKETING_VERSION": .string(AppSettings.marketingVersion),
     "CURRENT_PROJECT_VERSION": .string(AppSettings.buildNumber),
-    "DEVELOPMENT_TEAM": .string(AppSettings.developmentTeam),
   ]
 }

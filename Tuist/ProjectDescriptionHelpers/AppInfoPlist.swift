@@ -1,7 +1,7 @@
 import ProjectDescription
 
 public enum AppInfoPlist {
-  // Xcode generates the Info.plist using these build settings.
+  /// Xcode generates the Info.plist using these build settings.
   public static let buildSettings: SettingsDictionary = [
     "GENERATE_INFOPLIST_FILE": "YES",
     "INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]": "YES",

@@ -10,12 +10,12 @@ public enum AppTarget {
       deploymentTargets: .multiplatform(
         iOS: AppSettings.deploymentTarget,
         macOS: AppSettings.deploymentTarget,
-        visionOS: AppSettings.deploymentTarget
+        visionOS: AppSettings.deploymentTarget,
       ),
       infoPlist: nil,
-      sources: ["Atelier/Sources/**/*.swift"],
+      sources: ["Atelier/Sources/**/*.swift", "Atelier/Sources/**/*.metal", "Atelier/Sources/**/*.h"],
       resources: ["Atelier/Resources/**"],
-      settings: AppBuildSettings.settings
+      settings: AppBuildSettings.settings,
     )
   }
 }

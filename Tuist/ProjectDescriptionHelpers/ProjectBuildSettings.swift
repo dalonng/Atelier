@@ -3,6 +3,7 @@ import ProjectDescription
 public enum ProjectBuildSettings {
   public static let settings: Settings = .settings(
     base: [
+      "DEVELOPMENT_TEAM": .string(AppSettings.developmentTeam),
       "ALWAYS_SEARCH_USER_PATHS": "NO",
       "ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS": "YES",
       "CLANG_ANALYZER_NONNULL": "YES",
@@ -68,6 +69,6 @@ public enum ProjectBuildSettings {
         "SWIFT_COMPILATION_MODE": "wholemodule",
       ]),
     ],
-    defaultSettings: .none
+    defaultSettings: .none,
   )
 }

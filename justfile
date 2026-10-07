@@ -9,6 +9,10 @@ default:
 setup:
     mise install
 
+# 格式化应用源码和 Tuist 配置
+format:
+    bash Scripts/format.sh
+
 # 检查真机或归档所需的个人签名配置
 check-signing:
     @test -n "${TUIST_DEVELOPMENT_TEAM:-}" && test "${TUIST_DEVELOPMENT_TEAM:-}" != YOUR_TEAM_ID || { echo '请在 .env 中配置 TUIST_DEVELOPMENT_TEAM。' >&2; exit 1; }
@@ -23,13 +27,13 @@ open: generate
     open Atelier.xcworkspace
 
 # 构建 iOS 模拟器版本（无需签名）
-build-ios configuration="Debug": generate
+build-ios configuration="Debug": format generate
     xcodebuild -workspace Atelier.xcworkspace -scheme Atelier -configuration "{{configuration}}" -destination 'generic/platform=iOS Simulator' -derivedDataPath .build/ios CODE_SIGNING_ALLOWED=NO build
 
 # 构建 macOS 版本（无需签名）
-build-mac configuration="Debug": generate
+build-mac configuration="Debug": format generate
     xcodebuild -workspace Atelier.xcworkspace -scheme Atelier -configuration "{{configuration}}" -destination 'generic/platform=macOS' -derivedDataPath .build/mac CODE_SIGNING_ALLOWED=NO build
 
 # 构建 visionOS 模拟器版本（无需签名）
-build-vision configuration="Debug": generate
+build-vision configuration="Debug": format generate
     xcodebuild -workspace Atelier.xcworkspace -scheme Atelier -configuration "{{configuration}}" -destination 'generic/platform=visionOS Simulator' -derivedDataPath .build/vision CODE_SIGNING_ALLOWED=NO build
